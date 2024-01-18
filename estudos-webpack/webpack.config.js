@@ -12,11 +12,14 @@ module.exports = {
     module: {
         rules: [{
             test: /\.css$/,
-            use: ['style-loader', 'css-loader']
+            use: [MiniCssExtractPlugin.loader, 'css-loader']
         },
         {
             test: /\.ts$/,
             use: ['ts-loader']
         }]
-    }
+    },
+    plugins: [
+        new MiniCssExtractPlugin()
+    ]
 }
